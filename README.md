@@ -23,3 +23,6 @@ Este é um projeto simples de gestão de farmácia desenvolvido em linguagem C c
 ------------
 
 Contribuições são bem-vindas! Sinta-se à vontade para reportar problemas, sugerir melhorias ou enviar pull requests.
+
+![image](https://github.com/FaculdadeLicenciatura/ProjetoFarmacia/assets/50460047/1056ffca-59b8-465a-8525-60bb6c13da9c)
+
