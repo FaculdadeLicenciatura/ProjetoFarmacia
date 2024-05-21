@@ -84,15 +84,15 @@ int main() {
 int Menu() {
     int opcao;
     system("clear");
-    printf("\n+---------------------------------------+\n");
-    printf("|          Menu Principal               |\n");
-    printf("|---------------------------------------|\n");
-    printf("| 1) Produtos                           |\n");
-    printf("| 2) Funcionários                       |\n");
-    printf("| 3) Receitas                           |\n");
-    printf("| 4) Stock                              |\n");
-    printf("| 9) Sair                               |\n");
-    printf("+---------------------------------------+\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║          Menu Principal               ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ 1) Produtos                           ║\n");
+    printf("║ 2) Funcionários                       ║\n");
+    printf("║ 3) Receitas                           ║\n");
+    printf("║ 4) Stock                              ║\n");
+    printf("║ 9) Sair                               ║\n");
+    printf("╚---------------------------------------╝\n");
     printf("Opcao: ");
     scanf("%d", &opcao);
     return opcao;
@@ -104,16 +104,16 @@ void menuProdutos(FILE *arquivoProdutos) {
     int opcao;
     while (1) {
         system("clear");
-        printf("\n+---------------------------------------+\n");
-        printf("|          Menu de Produtos             |\n");
-        printf("|---------------------------------------|\n");
-        printf("| 1) Cadastrar Produto                  |\n");
-        printf("| 2) Listar Produtos                    |\n");
-        printf("| 3) Atualizar Produto                  |\n");
-        printf("| 4) Vender Produto                     |\n");
-        printf("| 5) Excluir Produto                    |\n");
-        printf("| 9) Voltar                             |\n");
-        printf("+---------------------------------------+\n");
+        printf("\n╔---------------------------------------╗\n");
+        printf("║          Menu de Produtos             ║\n");
+        printf("╠---------------------------------------╣\n");
+        printf("║ 1) Cadastrar Produto                  ║\n");
+        printf("║ 2) Listar Produtos                    ║\n");
+        printf("║ 3) Atualizar Produto                  ║\n");
+        printf("║ 4) Vender Produto                     ║\n");
+        printf("║ 5) Excluir Produto                    ║\n");
+        printf("║ 9) Voltar                             ║\n");
+        printf("╚---------------------------------------╝\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
 
@@ -146,14 +146,14 @@ void menuFuncionarios(FILE *arquivoFuncionarios) {
     int opcao;
     while (1) {
         system("clear"); // Limpa a tela (apenas para sistemas Unix/Linux)
-        printf("\n+---------------------------------------+\n");
-        printf("|         Menu de Funcionarios           |\n");
-        printf("|---------------------------------------|\n");
-        printf("| 1) Cadastrar Funcionario              |\n");
-        printf("| 2) Listar Funcionarios                |\n");
-        printf("| 3) Excluir Funcionario                |\n");
-        printf("| 9) Voltar                             |\n");
-        printf("+---------------------------------------+\n");
+        printf("\n╔---------------------------------------╗\n");
+        printf("║         Menu de Funcionarios           ║\n");
+        printf("╠---------------------------------------╣\n");
+        printf("║ 1) Cadastrar Funcionario              ║\n");
+        printf("║ 2) Listar Funcionarios                ║\n");
+        printf("║ 3) Excluir Funcionario                ║\n");
+        printf("║ 9) Voltar                             ║\n");
+        printf("╚---------------------------------------╝\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
 
@@ -180,15 +180,15 @@ void menuReceitas(FILE *arquivoReceitas) {
     int opcao;
     while (1) {
         system("clear"); // Limpa a tela (apenas para sistemas Unix/Linux)
-        printf("\n+---------------------------------------+\n");
-        printf("|           Menu de Receitas             |\n");
-        printf("|---------------------------------------|\n");
-        printf("| 1) Cadastrar Receita                   |\n");
-        printf("| 2) Listar Receitas                     |\n");
-        printf("| 3) Atualizar Receita                   |\n");
-        printf("| 4) Excluir Receita                     |\n");
-        printf("| 9) Voltar                              |\n");
-        printf("+---------------------------------------+\n");
+        printf("\n╔---------------------------------------╗\n");
+        printf("║           Menu de Receitas             ║\n");
+        printf("╠---------------------------------------╣\n");
+        printf("║ 1) Cadastrar Receita                   ║\n");
+        printf("║ 2) Listar Receitas                     ║\n");
+        printf("║ 3) Atualizar Receita                   ║\n");
+        printf("║ 4) Excluir Receita                     ║\n");
+        printf("║ 9) Voltar                              ║\n");
+        printf("╚---------------------------------------╝\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
 
@@ -217,14 +217,14 @@ void listarStock(FILE *arquivoProdutos) {
     Produto produto;
 
     system("clear");
-    printf("\n+---------------------------------------+\n");
-    printf("|                Stock                  |\n");
-    printf("|---------------------------------------|\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║                Stock                  ║\n");
+    printf("╠---------------------------------------╣\n");
     rewind(arquivoProdutos);
     while (fscanf(arquivoProdutos, "%s %f %d\n", produto.nome, &produto.preco, &produto.quantidade) != EOF) {
-        printf("| Nome: %-20s | Preco: %-8.2f | Quantidade: %d |\n", produto.nome, produto.preco, produto.quantidade);
+        printf("║ Nome: %-20s | Preco: %-8.2f | Quantidade: %d ║\n", produto.nome, produto.preco, produto.quantidade);
     }
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar();
     getchar();
@@ -234,14 +234,14 @@ void listarStock(FILE *arquivoProdutos) {
 void cadastrarProduto(FILE *arquivoProdutos) {
     Produto novoProduto;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|          Cadastrar Novo Produto        |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome:                                 |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║          Cadastrar Novo Produto        ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome:                                 ║\n");
     scanf("%s", novoProduto.nome);
-    printf("| Preco:                                |\n");
+    printf("║ Preco:                                ║\n");
     scanf("%f", &novoProduto.preco);
-    printf("| Quantidade:                           |\n");
+    printf("║ Quantidade:                           ║\n");
     scanf("%d", &novoProduto.quantidade);
 
     if (fprintf(arquivoProdutos, "%s %.2f %d\n", novoProduto.nome, novoProduto.preco, novoProduto.quantidade) < 0) {
@@ -260,14 +260,14 @@ void listarProdutos(FILE *arquivoProdutos) {
     Produto produto;
 
     system("clear"); // Limpa a tela (apenas para sistemas Unix/Linux)
-    printf("\n+---------------------------------------+\n");
-    printf("|        Listagem de Produtos            |\n");
-    printf("|---------------------------------------|\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║        Listagem de Produtos            ║\n");
+    printf("╠---------------------------------------╣\n");
     rewind(arquivoProdutos);
     while (fscanf(arquivoProdutos, "%s %f %d\n", produto.nome, &produto.preco, &produto.quantidade) != EOF) {
-        printf("| Nome: %-20s | Preco: %-8.2f | Quantidade: %d |\n", produto.nome, produto.preco, produto.quantidade);
+        printf("║ Nome: %-20s | Preco: %-8.2f | Quantidade: %d ║\n", produto.nome, produto.preco, produto.quantidade);
     }
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -280,10 +280,10 @@ void atualizarProduto(FILE *arquivoProdutos) {
     int quantidade;
     Produto produto;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|           Atualizar Produto            |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome do Produto a Atualizar:           |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║           Atualizar Produto            ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome do Produto a Atualizar:           ║\n");
     scanf("%s", nome);
 
     rewind(arquivoProdutos);
@@ -291,13 +291,13 @@ void atualizarProduto(FILE *arquivoProdutos) {
 
     while (fscanf(arquivoProdutos, "%s %f %d\n", produto.nome, &produto.preco, &produto.quantidade) != EOF) {
         if (strcmp(produto.nome, nome) == 0) {
-            printf("| Novo Preco:                            |\n");
+            printf("║ Novo Preco:                            ║\n");
             scanf("%f", &produto.preco);
-            printf("| Nova Quantidade:                       |\n");
+            printf("║ Nova Quantidade:                       ║\n");
             scanf("%d", &quantidade);
             produto.quantidade = quantidade;
             fprintf(temp, "%s %.2f %d\n", produto.nome, produto.preco, produto.quantidade);
-            printf("| Produto atualizado com sucesso!       |\n");
+            printf("║ Produto atualizado com sucesso!       ║\n");
         } else {
             fprintf(temp, "%s %.2f %d\n", produto.nome, produto.preco, produto.quantidade);
         }
@@ -307,7 +307,7 @@ void atualizarProduto(FILE *arquivoProdutos) {
     fclose(temp);
     remove("produtos.txt");
     rename("temp.txt", "produtos.txt");
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -322,10 +322,10 @@ void venderProduto(FILE *arquivoProdutos) {
     FILE *temp;
     Produto produto;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|           Venda de Produto             |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome do Produto:                       |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║           Venda de Produto             ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome do Produto:                       ║\n");
     scanf("%s", nome);
 
     rewind(arquivoProdutos);
@@ -333,12 +333,12 @@ void venderProduto(FILE *arquivoProdutos) {
 
     while (fscanf(arquivoProdutos, "%s %f %d\n", produto.nome, &produto.preco, &produto.quantidade) != EOF) {
         if (strcmp(produto.nome, nome) == 0) {
-            printf("| Quantidade atual: %d                   |\n", produto.quantidade);
-            printf("| Quantidade vendida:                    |\n");
+            printf("║ Quantidade atual: %d                   ║\n", produto.quantidade);
+            printf("║ Quantidade vendida:                    ║\n");
             scanf("%d", &quantidadeVendida);
             quantidadeAtual = produto.quantidade - quantidadeVendida;
             fprintf(temp, "%s %.2f %d\n", produto.nome, produto.preco, quantidadeAtual);
-            printf("| Venda realizada com sucesso!           |\n");
+            printf("║ Venda realizada com sucesso!           ║\n");
         } else {
             fprintf(temp, "%s %.2f %d\n", produto.nome, produto.preco, produto.quantidade);
         }
@@ -348,7 +348,7 @@ void venderProduto(FILE *arquivoProdutos) {
     fclose(temp);
     remove("produtos.txt");
     rename("temp.txt", "produtos.txt");
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -361,10 +361,10 @@ void excluirProduto(FILE *arquivoProdutos) {
     Produto produto;
     int encontrado = 0;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|           Excluir Produto              |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome do Produto a Excluir:             |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║           Excluir Produto              ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome do Produto a Excluir:             ║\n");
     scanf("%s", nome);
 
     rewind(arquivoProdutos);
@@ -373,21 +373,21 @@ void excluirProduto(FILE *arquivoProdutos) {
     while (fscanf(arquivoProdutos, "%s %f %d\n", produto.nome, &produto.preco, &produto.quantidade) != EOF) {
         if (strcmp(produto.nome, nome) == 0) {
             encontrado = 1;
-            printf("| Produto %s excluído com sucesso!      |\n", nome);
+            printf("║ Produto %s excluído com sucesso!      ║\n", nome);
         } else {
             fprintf(temp, "%s %.2f %d\n", produto.nome, produto.preco, produto.quantidade);
         }
     }
 
     if (!encontrado) {
-        printf("| Produto %s não encontrado.             |\n", nome);
+        printf("║ Produto %s não encontrado.             ║\n", nome);
     }
 
     fclose(arquivoProdutos);
     fclose(temp);
     remove("produtos.txt");
     rename("temp.txt", "produtos.txt");
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -397,22 +397,22 @@ void excluirProduto(FILE *arquivoProdutos) {
 void cadastrarFuncionario(FILE *arquivoFuncionarios) {
     Funcionario novoFuncionario;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|     Cadastrar Novo Funcionário         |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome:                                   |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║     Cadastrar Novo Funcionário         ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome:                                   ║\n");
     scanf("%s", novoFuncionario.nome);
-    printf("| Idade:                                  |\n");
+    printf("║ Idade:                                  ║\n");
     scanf("%d", &novoFuncionario.idade);
-    printf("| Função:                                 |\n");
+    printf("║ Função:                                 ║\n");
     scanf("%s", novoFuncionario.funcao);
 
     if (fprintf(arquivoFuncionarios, "%s %d %s\n", novoFuncionario.nome, novoFuncionario.idade, novoFuncionario.funcao) < 0) {
-        printf("| Erro ao registrar o funcionário.       |\n");
+        printf("║ Erro ao registrar o funcionário.       ║\n");
     } else {
-        printf("| Funcionário registrado com sucesso!    |\n");
+        printf("║ Funcionário registrado com sucesso!    ║\n");
     }
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -423,14 +423,14 @@ void cadastrarFuncionario(FILE *arquivoFuncionarios) {
 void listarFuncionarios(FILE *arquivoFuncionarios) {
     Funcionario funcionario;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|        Listagem de Funcionários         |\n");
-    printf("|---------------------------------------|\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║        Listagem de Funcionários         ║\n");
+    printf("╠---------------------------------------╣\n");
     rewind(arquivoFuncionarios);
     while (fscanf(arquivoFuncionarios, "%s %d %s\n", funcionario.nome, &funcionario.idade, funcionario.funcao) != EOF) {
-        printf("| Nome: %-20s | Idade: %-3d | Função: %-10s |\n", funcionario.nome, funcionario.idade, funcionario.funcao);
+        printf("║ Nome: %-20s | Idade: %-3d | Função: %-10s ║\n", funcionario.nome, funcionario.idade, funcionario.funcao);
     }
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -443,10 +443,10 @@ void excluirFuncionario(FILE *arquivoFuncionarios) {
     Funcionario funcionario;
     int encontrado = 0;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|         Excluir Funcionário            |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome do Funcionário a Excluir:          |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║         Excluir Funcionário            ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome do Funcionário a Excluir:          ║\n");
     scanf("%s", nome);
 
     rewind(arquivoFuncionarios);
@@ -455,21 +455,21 @@ void excluirFuncionario(FILE *arquivoFuncionarios) {
     while (fscanf(arquivoFuncionarios, "%s %d %s\n", funcionario.nome, &funcionario.idade, funcionario.funcao) != EOF) {
         if (strcmp(funcionario.nome, nome) == 0) {
             encontrado = 1;
-            printf("| Funcionário %s excluído com sucesso!   |\n", nome);
+            printf("║ Funcionário %s excluído com sucesso!   ║\n", nome);
         } else {
             fprintf(temp, "%s %d %s\n", funcionario.nome, funcionario.idade, funcionario.funcao);
         }
     }
 
     if (!encontrado) {
-        printf("| Funcionário %s não encontrado.         |\n", nome);
+        printf("║ Funcionário %s não encontrado.         ║\n", nome);
     }
 
     fclose(arquivoFuncionarios);
     fclose(temp);
     remove("funcionarios.txt");
     rename("temp.txt", "funcionarios.txt");
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -480,20 +480,20 @@ void excluirFuncionario(FILE *arquivoFuncionarios) {
 void cadastrarReceita(FILE *arquivoReceitas) {
     Receita novaReceita;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|         Cadastrar Nova Receita        |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome:                                 |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║         Cadastrar Nova Receita        ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome:                                 ║\n");
     scanf("%s", novaReceita.nome);
-    printf("| Descrição:                            |\n");
+    printf("║ Descrição:                            ║\n");
     scanf("%s", novaReceita.descricao);
 
     if (fprintf(arquivoReceitas, "%s %s\n", novaReceita.nome, novaReceita.descricao) < 0) {
-        printf("| Erro ao cadastrar a receita.          |\n");
+        printf("║ Erro ao cadastrar a receita.          ║\n");
     } else {
-        printf("| Receita cadastrada com sucesso!       |\n");
+        printf("║ Receita cadastrada com sucesso!       ║\n");
     }
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -503,14 +503,14 @@ void cadastrarReceita(FILE *arquivoReceitas) {
 void listarReceitas(FILE *arquivoReceitas) {
     Receita receita;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|            Listagem de Receitas        |\n");
-    printf("|---------------------------------------|\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║            Listagem de Receitas        ║\n");
+    printf("╠---------------------------------------╣\n");
     rewind(arquivoReceitas);
     while (fscanf(arquivoReceitas, "%s %s\n", receita.nome, receita.descricao) != EOF) {
-        printf("| Nome: %-20s │ Descrição: %-30s |\n", receita.nome, receita.descricao);
+        printf("║ Nome: %-20s │ Descrição: %-30s ║\n", receita.nome, receita.descricao);
     }
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -521,10 +521,10 @@ void atualizarReceita(FILE *arquivoReceitas) {
     char nome[50];
     Receita receita;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|          Atualizar Receita            |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome da Receita a Atualizar:           |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║          Atualizar Receita            ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome da Receita a Atualizar:           ║\n");
     scanf("%s", nome);
 
     rewind(arquivoReceitas);
@@ -532,10 +532,10 @@ void atualizarReceita(FILE *arquivoReceitas) {
 
     while (fscanf(arquivoReceitas, "%s %s\n", receita.nome, receita.descricao) != EOF) {
         if (strcmp(receita.nome, nome) == 0) {
-            printf("| Nova Descrição:                       |\n");
+            printf("║ Nova Descrição:                       ║\n");
             scanf("%s", receita.descricao);
             fprintf(temp, "%s %s\n", receita.nome, receita.descricao);
-            printf("| Receita atualizada com sucesso!      |\n");
+            printf("║ Receita atualizada com sucesso!      ║\n");
         } else {
             fprintf(temp, "%s %s\n", receita.nome, receita.descricao);
         }
@@ -545,7 +545,7 @@ void atualizarReceita(FILE *arquivoReceitas) {
     fclose(temp);
     remove("receitas.txt");
     rename("temp.txt", "receitas.txt");
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
@@ -557,10 +557,10 @@ void excluirReceita(FILE *arquivoReceitas) {
     Receita receita;
     int encontrado = 0;
 
-    printf("\n+---------------------------------------+\n");
-    printf("|          Excluir Receita              |\n");
-    printf("|---------------------------------------|\n");
-    printf("| Nome da Receita a Excluir:             |\n");
+    printf("\n╔---------------------------------------╗\n");
+    printf("║          Excluir Receita              ║\n");
+    printf("╠---------------------------------------╣\n");
+    printf("║ Nome da Receita a Excluir:             ║\n");
     scanf("%s", nome);
 
     rewind(arquivoReceitas);
@@ -569,21 +569,21 @@ void excluirReceita(FILE *arquivoReceitas) {
     while (fscanf(arquivoReceitas, "%s %s\n", receita.nome, receita.descricao) != EOF) {
         if (strcmp(receita.nome, nome) == 0) {
             encontrado = 1;
-            printf("| Receita %s excluída com sucesso!      |\n", nome);
+            printf("║ Receita %s excluída com sucesso!      ║\n", nome);
         } else {
             fprintf(temp, "%s %s\n", receita.nome, receita.descricao);
         }
     }
 
     if (!encontrado) {
-        printf("| Receita %s não encontrada.           |\n", nome);
+        printf("║ Receita %s não encontrada.           ║\n", nome);
     }
 
     fclose(arquivoReceitas);
     fclose(temp);
     remove("receitas.txt");
     rename("temp.txt", "receitas.txt");
-    printf("+---------------------------------------+\n");
+    printf("╚---------------------------------------╝\n");
     printf("\nPressione Enter para continuar...");
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
