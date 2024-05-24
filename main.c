@@ -10,7 +10,7 @@ typedef struct {
     int quantidade;
 } Produto;
 
-// Estrutura para representar um funcionário
+// Estrutura para representar um funcionario
 typedef struct {
     char nome[50];
     int idade;
@@ -29,15 +29,15 @@ void menuProdutos(FILE *arquivoProdutos);
 void menuFuncionarios(FILE *arquivoFuncionarios);
 void menuReceitas(FILE *arquivoReceitas);
 void listarStock(FILE *arquivoProdutos);
-void cadastrarProduto(FILE *arquivoProdutos);
+void RegistarProduto(FILE *arquivoProdutos);
 void listarProdutos(FILE *arquivoProdutos);
 void atualizarProduto(FILE *arquivoProdutos);
 void venderProduto(FILE *arquivoProdutos);
 void excluirProduto(FILE *arquivoProdutos);
-void cadastrarFuncionario(FILE *arquivoFuncionarios);
+void RegistarFuncionario(FILE *arquivoFuncionarios);
 void listarFuncionarios(FILE *arquivoFuncionarios);
 void excluirFuncionario(FILE *arquivoFuncionarios);
-void cadastrarReceita(FILE *arquivoReceitas);
+void RegistarReceita(FILE *arquivoReceitas);
 void listarReceitas(FILE *arquivoReceitas);
 void atualizarReceita(FILE *arquivoReceitas);
 void excluirReceita(FILE *arquivoReceitas);
@@ -88,7 +88,7 @@ int Menu() {
     printf("|          Menu Principal               |\n");
     printf("|---------------------------------------|\n");
     printf("| 1) Produtos                           |\n");
-    printf("| 2) Funcionários                       |\n");
+    printf("| 2) Funcionarios                       |\n");
     printf("| 3) Receitas                           |\n");
     printf("| 4) Stock                              |\n");
     printf("| 9) Sair                               |\n");
@@ -107,7 +107,7 @@ void menuProdutos(FILE *arquivoProdutos) {
         printf("\n+---------------------------------------+\n");
         printf("|          Menu de Produtos             |\n");
         printf("|---------------------------------------|\n");
-        printf("| 1) Cadastrar Produto                  |\n");
+        printf("| 1) Registar Produto                  |\n");
         printf("| 2) Listar Produtos                    |\n");
         printf("| 3) Atualizar Produto                  |\n");
         printf("| 4) Vender Produto                     |\n");
@@ -119,7 +119,7 @@ void menuProdutos(FILE *arquivoProdutos) {
 
         switch (opcao) {
             case 1:
-                cadastrarProduto(arquivoProdutos);
+                RegistarProduto(arquivoProdutos);
                 break;
             case 2:
                 listarProdutos(arquivoProdutos);
@@ -141,7 +141,7 @@ void menuProdutos(FILE *arquivoProdutos) {
     }
 }
 
-// Função para exibir o menu de funcionários
+// Função para exibir o menu de funcionarios
 void menuFuncionarios(FILE *arquivoFuncionarios) {
     int opcao;
     while (1) {
@@ -149,7 +149,7 @@ void menuFuncionarios(FILE *arquivoFuncionarios) {
         printf("\n+---------------------------------------+\n");
         printf("|         Menu de Funcionarios           |\n");
         printf("|---------------------------------------|\n");
-        printf("| 1) Cadastrar Funcionario              |\n");
+        printf("| 1) Registar Funcionario              |\n");
         printf("| 2) Listar Funcionarios                |\n");
         printf("| 3) Excluir Funcionario                |\n");
         printf("| 9) Voltar                             |\n");
@@ -159,7 +159,7 @@ void menuFuncionarios(FILE *arquivoFuncionarios) {
 
         switch (opcao) {
             case 1:
-                cadastrarFuncionario(arquivoFuncionarios);
+                RegistarFuncionario(arquivoFuncionarios);
                 break;
             case 2:
                 listarFuncionarios(arquivoFuncionarios);
@@ -183,7 +183,7 @@ void menuReceitas(FILE *arquivoReceitas) {
         printf("\n+---------------------------------------+\n");
         printf("|           Menu de Receitas             |\n");
         printf("|---------------------------------------|\n");
-        printf("| 1) Cadastrar Receita                   |\n");
+        printf("| 1) Registar Receita                   |\n");
         printf("| 2) Listar Receitas                     |\n");
         printf("| 3) Atualizar Receita                   |\n");
         printf("| 4) Excluir Receita                     |\n");
@@ -194,7 +194,7 @@ void menuReceitas(FILE *arquivoReceitas) {
 
         switch (opcao) {
             case 1:
-                cadastrarReceita(arquivoReceitas);
+                RegistarReceita(arquivoReceitas);
                 break;
             case 2:
                 listarReceitas(arquivoReceitas);
@@ -230,12 +230,12 @@ void listarStock(FILE *arquivoProdutos) {
     getchar();
 }
 
-// Função para cadastrar um novo produto
-void cadastrarProduto(FILE *arquivoProdutos) {
+// Função para Registar um novo produto
+void RegistarProduto(FILE *arquivoProdutos) {
     Produto novoProduto;
 
     printf("\n+---------------------------------------+\n");
-    printf("|          Cadastrar Novo Produto        |\n");
+    printf("|          Registar Novo Produto        |\n");
     printf("|---------------------------------------|\n");
     printf("| Nome:                                 |\n");
     scanf("%s", novoProduto.nome);
@@ -393,12 +393,12 @@ void excluirProduto(FILE *arquivoProdutos) {
     getchar(); // Esperar pelo Enter
 }
 
-// Função para cadastrar um novo funcionário
-void cadastrarFuncionario(FILE *arquivoFuncionarios) {
+// Função para Registar um novo funcionario
+void RegistarFuncionario(FILE *arquivoFuncionarios) {
     Funcionario novoFuncionario;
 
     printf("\n+---------------------------------------+\n");
-    printf("|     Cadastrar Novo Funcionário         |\n");
+    printf("|     Registar Novo Funcionario         |\n");
     printf("|---------------------------------------|\n");
     printf("| Nome:                                   |\n");
     scanf("%s", novoFuncionario.nome);
@@ -408,9 +408,9 @@ void cadastrarFuncionario(FILE *arquivoFuncionarios) {
     scanf("%s", novoFuncionario.funcao);
 
     if (fprintf(arquivoFuncionarios, "%s %d %s\n", novoFuncionario.nome, novoFuncionario.idade, novoFuncionario.funcao) < 0) {
-        printf("| Erro ao registrar o funcionário.       |\n");
+        printf("| Erro ao registrar o funcionario.       |\n");
     } else {
-        printf("| Funcionário registrado com sucesso!    |\n");
+        printf("| Funcionario registrado com sucesso!    |\n");
     }
     printf("+---------------------------------------+\n");
     printf("\nPressione Enter para continuar...");
@@ -419,12 +419,12 @@ void cadastrarFuncionario(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para listar os funcionários cadastrados
+// Função para listar os funcionarios cadastrados
 void listarFuncionarios(FILE *arquivoFuncionarios) {
     Funcionario funcionario;
 
     printf("\n+---------------------------------------+\n");
-    printf("|        Listagem de Funcionários         |\n");
+    printf("|        Listagem de Funcionarios         |\n");
     printf("|---------------------------------------|\n");
     rewind(arquivoFuncionarios);
     while (fscanf(arquivoFuncionarios, "%s %d %s\n", funcionario.nome, &funcionario.idade, funcionario.funcao) != EOF) {
@@ -437,16 +437,16 @@ void listarFuncionarios(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para excluir um funcionário
+// Função para excluir um funcionario
 void excluirFuncionario(FILE *arquivoFuncionarios) {
     char nome[50];
     Funcionario funcionario;
     int encontrado = 0;
 
     printf("\n+---------------------------------------+\n");
-    printf("|         Excluir Funcionário            |\n");
+    printf("|         Excluir Funcionario            |\n");
     printf("|---------------------------------------|\n");
-    printf("| Nome do Funcionário a Excluir:          |\n");
+    printf("| Nome do Funcionario a Excluir:          |\n");
     scanf("%s", nome);
 
     rewind(arquivoFuncionarios);
@@ -455,14 +455,14 @@ void excluirFuncionario(FILE *arquivoFuncionarios) {
     while (fscanf(arquivoFuncionarios, "%s %d %s\n", funcionario.nome, &funcionario.idade, funcionario.funcao) != EOF) {
         if (strcmp(funcionario.nome, nome) == 0) {
             encontrado = 1;
-            printf("| Funcionário %s excluído com sucesso!   |\n", nome);
+            printf("| Funcionario %s excluído com sucesso!   |\n", nome);
         } else {
             fprintf(temp, "%s %d %s\n", funcionario.nome, funcionario.idade, funcionario.funcao);
         }
     }
 
     if (!encontrado) {
-        printf("| Funcionário %s não encontrado.         |\n", nome);
+        printf("| Funcionario %s não encontrado.         |\n", nome);
     }
 
     fclose(arquivoFuncionarios);
@@ -476,12 +476,12 @@ void excluirFuncionario(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para cadastrar uma nova receita
-void cadastrarReceita(FILE *arquivoReceitas) {
+// Função para Registar uma nova receita
+void RegistarReceita(FILE *arquivoReceitas) {
     Receita novaReceita;
 
     printf("\n+---------------------------------------+\n");
-    printf("|         Cadastrar Nova Receita        |\n");
+    printf("|         Registar Nova Receita        |\n");
     printf("|---------------------------------------|\n");
     printf("| Nome:                                 |\n");
     scanf("%s", novaReceita.nome);
@@ -489,7 +489,7 @@ void cadastrarReceita(FILE *arquivoReceitas) {
     scanf("%s", novaReceita.descricao);
 
     if (fprintf(arquivoReceitas, "%s %s\n", novaReceita.nome, novaReceita.descricao) < 0) {
-        printf("| Erro ao cadastrar a receita.          |\n");
+        printf("| Erro ao Registar a receita.          |\n");
     } else {
         printf("| Receita cadastrada com sucesso!       |\n");
     }
@@ -588,4 +588,3 @@ void excluirReceita(FILE *arquivoReceitas) {
     getchar(); // Limpar o buffer do teclado
     getchar(); // Esperar pelo Enter
 }
-
