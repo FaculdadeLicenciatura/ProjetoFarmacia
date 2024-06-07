@@ -33,14 +33,14 @@ void RegistarProduto(FILE *arquivoProdutos);
 void listarProdutos(FILE *arquivoProdutos);
 void atualizarProduto(FILE *arquivoProdutos);
 void venderProduto(FILE *arquivoProdutos);
-void excluirProduto(FILE *arquivoProdutos);
+void EliminarProduto(FILE *arquivoProdutos);
 void RegistarFuncionario(FILE *arquivoFuncionarios);
 void listarFuncionarios(FILE *arquivoFuncionarios);
-void excluirFuncionario(FILE *arquivoFuncionarios);
+void EliminarFuncionario(FILE *arquivoFuncionarios);
 void RegistarReceita(FILE *arquivoReceitas);
 void listarReceitas(FILE *arquivoReceitas);
 void atualizarReceita(FILE *arquivoReceitas);
-void excluirReceita(FILE *arquivoReceitas);
+void EliminarReceita(FILE *arquivoReceitas);
 
 int main() {
 
@@ -111,7 +111,7 @@ void menuProdutos(FILE *arquivoProdutos) {
         printf("| 2) Listar Produtos                    |\n");
         printf("| 3) Atualizar Produto                  |\n");
         printf("| 4) Vender Produto                     |\n");
-        printf("| 5) Excluir Produto                    |\n");
+        printf("| 5) Eliminar Produto                    |\n");
         printf("| 9) Voltar                             |\n");
         printf("+---------------------------------------+\n");
         printf("Opcao: ");
@@ -131,7 +131,7 @@ void menuProdutos(FILE *arquivoProdutos) {
                 venderProduto(arquivoProdutos);
                 break;
             case 5:
-                excluirProduto(arquivoProdutos);
+                EliminarProduto(arquivoProdutos);
                 break;
             case 9:
                 return;
@@ -151,7 +151,7 @@ void menuFuncionarios(FILE *arquivoFuncionarios) {
         printf("|---------------------------------------|\n");
         printf("| 1) Registar Funcionario              |\n");
         printf("| 2) Listar Funcionarios                |\n");
-        printf("| 3) Excluir Funcionario                |\n");
+        printf("| 3) Eliminar Funcionario                |\n");
         printf("| 9) Voltar                             |\n");
         printf("+---------------------------------------+\n");
         printf("Opcao: ");
@@ -165,7 +165,7 @@ void menuFuncionarios(FILE *arquivoFuncionarios) {
                 listarFuncionarios(arquivoFuncionarios);
                 break;
             case 3:
-                excluirFuncionario(arquivoFuncionarios);
+                EliminarFuncionario(arquivoFuncionarios);
                 break;
             case 9:
                 return;
@@ -186,7 +186,7 @@ void menuReceitas(FILE *arquivoReceitas) {
         printf("| 1) Registar Receita                   |\n");
         printf("| 2) Listar Receitas                     |\n");
         printf("| 3) Atualizar Receita                   |\n");
-        printf("| 4) Excluir Receita                     |\n");
+        printf("| 4) Eliminar Receita                     |\n");
         printf("| 9) Voltar                              |\n");
         printf("+---------------------------------------+\n");
         printf("Opcao: ");
@@ -203,7 +203,7 @@ void menuReceitas(FILE *arquivoReceitas) {
                 atualizarReceita(arquivoReceitas);
                 break;
             case 4:
-                excluirReceita(arquivoReceitas);
+                EliminarReceita(arquivoReceitas);
                 break;
             case 9:
                 return;
@@ -355,16 +355,16 @@ void venderProduto(FILE *arquivoProdutos) {
 }
 
 
-// Função para excluir um produto
-void excluirProduto(FILE *arquivoProdutos) {
+// Função para Eliminar um produto
+void EliminarProduto(FILE *arquivoProdutos) {
     char nome[50];
     Produto produto;
     int encontrado = 0;
 
     printf("\n+---------------------------------------+\n");
-    printf("|           Excluir Produto              |\n");
+    printf("|           Eliminar Produto              |\n");
     printf("|---------------------------------------|\n");
-    printf("| Nome do Produto a Excluir:             |\n");
+    printf("| Nome do Produto a Eliminar:             |\n");
     scanf("%s", nome);
 
     rewind(arquivoProdutos);
@@ -437,16 +437,16 @@ void listarFuncionarios(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para excluir um funcionario
-void excluirFuncionario(FILE *arquivoFuncionarios) {
+// Função para Eliminar um funcionario
+void EliminarFuncionario(FILE *arquivoFuncionarios) {
     char nome[50];
     Funcionario funcionario;
     int encontrado = 0;
 
     printf("\n+---------------------------------------+\n");
-    printf("|         Excluir Funcionario            |\n");
+    printf("|         Eliminar Funcionario            |\n");
     printf("|---------------------------------------|\n");
-    printf("| Nome do Funcionario a Excluir:          |\n");
+    printf("| Nome do Funcionario a Eliminar:          |\n");
     scanf("%s", nome);
 
     rewind(arquivoFuncionarios);
@@ -552,15 +552,15 @@ void atualizarReceita(FILE *arquivoReceitas) {
 }
 
 
-void excluirReceita(FILE *arquivoReceitas) {
+void EliminarReceita(FILE *arquivoReceitas) {
     char nome[50];
     Receita receita;
     int encontrado = 0;
 
     printf("\n+---------------------------------------+\n");
-    printf("|          Excluir Receita              |\n");
+    printf("|          Eliminar Receita              |\n");
     printf("|---------------------------------------|\n");
-    printf("| Nome da Receita a Excluir:             |\n");
+    printf("| Nome da Receita a Eliminar:             |\n");
     scanf("%s", nome);
 
     rewind(arquivoReceitas);
