@@ -99,7 +99,7 @@ int Menu() {
 }
 
 
-// Função para exibir o menu de produtos
+// Funçao para exibir o menu de produtos
 void menuProdutos(FILE *arquivoProdutos) {
     int opcao;
     while (1) {
@@ -141,7 +141,7 @@ void menuProdutos(FILE *arquivoProdutos) {
     }
 }
 
-// Função para exibir o menu de funcionarios
+// Funçao para exibir o menu de funcionarios
 void menuFuncionarios(FILE *arquivoFuncionarios) {
     int opcao;
     while (1) {
@@ -175,7 +175,7 @@ void menuFuncionarios(FILE *arquivoFuncionarios) {
     }
 }
 
-// Função para exibir o menu de receitas
+// Funçao para exibir o menu de receitas
 void menuReceitas(FILE *arquivoReceitas) {
     int opcao;
     while (1) {
@@ -230,7 +230,7 @@ void listarStock(FILE *arquivoProdutos) {
     getchar();
 }
 
-// Função para Registar um novo produto
+// Funçao para Registar um novo produto
 void RegistarProduto(FILE *arquivoProdutos) {
     Produto novoProduto;
 
@@ -255,7 +255,7 @@ void RegistarProduto(FILE *arquivoProdutos) {
 }
 
 
-// Função para listar os produtos cadastrados
+// Funçao para listar os produtos cadastrados
 void listarProdutos(FILE *arquivoProdutos) {
     Produto produto;
 
@@ -274,7 +274,7 @@ void listarProdutos(FILE *arquivoProdutos) {
 }
 
 
-// Função para atualizar informações de um produto
+// Funçao para atualizar informações de um produto
 void atualizarProduto(FILE *arquivoProdutos) {
     char nome[50];
     int quantidade;
@@ -314,7 +314,7 @@ void atualizarProduto(FILE *arquivoProdutos) {
 }
 
 
-// Função para vender um produto
+// Funçao para vender um produto
 void venderProduto(FILE *arquivoProdutos) {
     char nome[50];
     int quantidadeVendida;
@@ -355,7 +355,7 @@ void venderProduto(FILE *arquivoProdutos) {
 }
 
 
-// Função para Eliminar um produto
+// Funçao para Eliminar um produto
 void EliminarProduto(FILE *arquivoProdutos) {
     char nome[50];
     Produto produto;
@@ -380,7 +380,7 @@ void EliminarProduto(FILE *arquivoProdutos) {
     }
 
     if (!encontrado) {
-        printf("| Produto %s não encontrado.             |\n", nome);
+        printf("| Produto %s nao encontrado.             |\n", nome);
     }
 
     fclose(arquivoProdutos);
@@ -393,7 +393,7 @@ void EliminarProduto(FILE *arquivoProdutos) {
     getchar(); // Esperar pelo Enter
 }
 
-// Função para Registar um novo funcionario
+// Funçao para Registar um novo funcionario
 void RegistarFuncionario(FILE *arquivoFuncionarios) {
     Funcionario novoFuncionario;
 
@@ -404,7 +404,7 @@ void RegistarFuncionario(FILE *arquivoFuncionarios) {
     scanf("%s", novoFuncionario.nome);
     printf("| Idade:                                  |\n");
     scanf("%d", &novoFuncionario.idade);
-    printf("| Função:                                 |\n");
+    printf("| Funçao:                                 |\n");
     scanf("%s", novoFuncionario.funcao);
 
     if (fprintf(arquivoFuncionarios, "%s %d %s\n", novoFuncionario.nome, novoFuncionario.idade, novoFuncionario.funcao) < 0) {
@@ -419,7 +419,7 @@ void RegistarFuncionario(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para listar os funcionarios cadastrados
+// Funçao para listar os funcionarios cadastrados
 void listarFuncionarios(FILE *arquivoFuncionarios) {
     Funcionario funcionario;
 
@@ -428,7 +428,7 @@ void listarFuncionarios(FILE *arquivoFuncionarios) {
     printf("|---------------------------------------|\n");
     rewind(arquivoFuncionarios);
     while (fscanf(arquivoFuncionarios, "%s %d %s\n", funcionario.nome, &funcionario.idade, funcionario.funcao) != EOF) {
-        printf("| Nome: %-20s | Idade: %-3d | Função: %-10s |\n", funcionario.nome, funcionario.idade, funcionario.funcao);
+        printf("| Nome: %-20s | Idade: %-3d | Funçao: %-10s |\n", funcionario.nome, funcionario.idade, funcionario.funcao);
     }
     printf("+---------------------------------------+\n");
     printf("\nPressione Enter para continuar...");
@@ -437,7 +437,7 @@ void listarFuncionarios(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para Eliminar um funcionario
+// Funçao para Eliminar um funcionario
 void EliminarFuncionario(FILE *arquivoFuncionarios) {
     char nome[50];
     Funcionario funcionario;
@@ -462,7 +462,7 @@ void EliminarFuncionario(FILE *arquivoFuncionarios) {
     }
 
     if (!encontrado) {
-        printf("| Funcionario %s não encontrado.         |\n", nome);
+        printf("| Funcionario %s nao encontrado.         |\n", nome);
     }
 
     fclose(arquivoFuncionarios);
@@ -476,7 +476,7 @@ void EliminarFuncionario(FILE *arquivoFuncionarios) {
 }
 
 
-// Função para Registar uma nova receita
+// Funçao para Registar uma nova receita
 void RegistarReceita(FILE *arquivoReceitas) {
     Receita novaReceita;
 
@@ -485,7 +485,7 @@ void RegistarReceita(FILE *arquivoReceitas) {
     printf("|---------------------------------------|\n");
     printf("| Nome:                                 |\n");
     scanf("%s", novaReceita.nome);
-    printf("| Descrição:                            |\n");
+    printf("| Descriçao:                            |\n");
     scanf("%s", novaReceita.descricao);
 
     if (fprintf(arquivoReceitas, "%s %s\n", novaReceita.nome, novaReceita.descricao) < 0) {
@@ -508,7 +508,7 @@ void listarReceitas(FILE *arquivoReceitas) {
     printf("|---------------------------------------|\n");
     rewind(arquivoReceitas);
     while (fscanf(arquivoReceitas, "%s %s\n", receita.nome, receita.descricao) != EOF) {
-        printf("| Nome: %-20s │ Descrição: %-30s |\n", receita.nome, receita.descricao);
+        printf("| Nome: %-20s │ Descriçao: %-30s |\n", receita.nome, receita.descricao);
     }
     printf("+---------------------------------------+\n");
     printf("\nPressione Enter para continuar...");
@@ -532,7 +532,7 @@ void atualizarReceita(FILE *arquivoReceitas) {
 
     while (fscanf(arquivoReceitas, "%s %s\n", receita.nome, receita.descricao) != EOF) {
         if (strcmp(receita.nome, nome) == 0) {
-            printf("| Nova Descrição:                       |\n");
+            printf("| Nova Descriçao:                       |\n");
             scanf("%s", receita.descricao);
             fprintf(temp, "%s %s\n", receita.nome, receita.descricao);
             printf("| Receita atualizada com sucesso!      |\n");
@@ -576,7 +576,7 @@ void EliminarReceita(FILE *arquivoReceitas) {
     }
 
     if (!encontrado) {
-        printf("| Receita %s não encontrada.           |\n", nome);
+        printf("| Receita %s nao encontrada.           |\n", nome);
     }
 
     fclose(arquivoReceitas);
